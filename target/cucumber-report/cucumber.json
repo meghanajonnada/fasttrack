@@ -1,0 +1,429 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 2,
+        "name": "Facebook login test",
+        "description": "",
+        "id": "facebook-message;facebook-login-test",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 9467102294,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "user opens \"chrome\" user types \"https://www.facebook.com/\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "chrome",
+                  "offset": 12
+                },
+                {
+                  "val": "https://www.facebook.com/",
+                  "offset": 32
+                }
+              ],
+              "location": "Launchstepdef.user_opens_Facebook(String,String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 508000000,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "user enters \"jgvmeghana@gmail.com\" and \"14july1996\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "jgvmeghana@gmail.com",
+                  "offset": 13
+                },
+                {
+                  "val": "14july1996",
+                  "offset": 40
+                }
+              ],
+              "location": "Launchstepdef.user_enters_credentials(String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 5195802880,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user clicks on login",
+            "match": {
+              "location": "Launchstepdef.user_clicks_on_login()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 509470293,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "is on facebook home page",
+            "match": {
+              "location": "Launchstepdef.user_is_on_home_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 7250056533,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user clicks on settings",
+            "match": {
+              "location": "Iconsstepdef.user_clicks_on_settings()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 10469803093,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "user selects Activitylog",
+            "match": {
+              "location": "Iconsstepdef.user_selects_activity_log()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 503437226,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "user must view Activity log page",
+            "match": {
+              "location": "Iconsstepdef.user_must_view_activitylog()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 10167695786,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "user clicks on logout",
+            "match": {
+              "location": "Iconsstepdef.user_clicks_on_logout()"
+            },
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "Facebook message",
+    "description": "",
+    "id": "facebook-message",
+    "keyword": "Feature",
+    "uri": "activitylog.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 2,
+        "name": "Facebook login test",
+        "description": "",
+        "id": "facebook-logout;facebook-login-test",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 7983712000,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "user opens \"chrome\" user types \"https://www.facebook.com/\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "chrome",
+                  "offset": 12
+                },
+                {
+                  "val": "https://www.facebook.com/",
+                  "offset": 32
+                }
+              ],
+              "location": "Launchstepdef.user_opens_Facebook(String,String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 530332160,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "user enters \"jgvmeghana@gmail.com\" and \"14july1996\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "jgvmeghana@gmail.com",
+                  "offset": 13
+                },
+                {
+                  "val": "14july1996",
+                  "offset": 40
+                }
+              ],
+              "location": "Launchstepdef.user_enters_credentials(String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 3916303360,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user clicks on login",
+            "match": {
+              "location": "Launchstepdef.user_clicks_on_login()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 261724587,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "is on facebook home page",
+            "match": {
+              "location": "Launchstepdef.user_is_on_home_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1097545386,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user searches for \"Meghana Jonnada\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Meghana Jonnada",
+                  "offset": 19
+                }
+              ],
+              "location": "Searchfriendstepdef.user_searches_for(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 11475022080,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "user clicks on friends profile",
+            "match": {
+              "location": "Searchfriendstepdef.user_clicks_on_friends_profile()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 111626667,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "user clicks on home",
+            "match": {
+              "location": "Iconsstepdef.user_clicks_on_home()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 7216915200,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "user clicks on settings",
+            "match": {
+              "location": "Iconsstepdef.user_clicks_on_settings()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 7180090027,
+              "error_message": "org.openqa.selenium.ElementNotVisibleException: element not visible\n  (Session info: chrome\u003d69.0.3497.100)\n  (Driver info: chromedriver\u003d2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform\u003dWindows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 0 milliseconds\nBuild info: version: \u00273.14.0\u0027, revision: \u0027aacccce0\u0027, time: \u00272018-08-02T20:19:58.91Z\u0027\nSystem info: host: \u0027LAPTOP-N5IJKTU1\u0027, ip: \u002725.130.10.219\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_131\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\\Users\\MULESO~1\\AppData\\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:62142}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}\nSession ID: a0be1e8576d09a8f90f9c12d4a946d4e\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\r\n\tat org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)\r\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)\r\n\tat org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:276)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)\r\n\tat method.Methods.clickLogout(Methods.java:301)\r\n\tat stepDefinition.Iconsstepdef.user_clicks_on_logout(Iconsstepdef.java:28)\r\n\tat ✽.Then user clicks on logout(friendsearch.feature:11)\r\n",
+              "status": "failed"
+            },
+            "line": 11,
+            "name": "user clicks on logout",
+            "match": {
+              "location": "Iconsstepdef.user_clicks_on_logout()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Facebook logout",
+    "description": "",
+    "id": "facebook-logout",
+    "keyword": "Feature",
+    "uri": "friendsearch.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 2,
+        "name": "Facebook login test",
+        "description": "",
+        "id": "facebook-message;facebook-login-test",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 8331256747,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "user opens \"chrome\" user types \"https://www.facebook.com/\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "chrome",
+                  "offset": 12
+                },
+                {
+                  "val": "https://www.facebook.com/",
+                  "offset": 32
+                }
+              ],
+              "location": "Launchstepdef.user_opens_Facebook(String,String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 496305494,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "user enters \"jgvmeghana@gmail.com\" and \"14july1996\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "jgvmeghana@gmail.com",
+                  "offset": 13
+                },
+                {
+                  "val": "14july1996",
+                  "offset": 40
+                }
+              ],
+              "location": "Launchstepdef.user_enters_credentials(String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 5340666454,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user clicks on login",
+            "match": {
+              "location": "Launchstepdef.user_clicks_on_login()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 456404480,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "is on facebook home page",
+            "match": {
+              "location": "Launchstepdef.user_is_on_home_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 988060160,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user searches for \"Meghana Jonnada\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Meghana Jonnada",
+                  "offset": 19
+                }
+              ],
+              "location": "Searchfriendstepdef.user_searches_for(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 10938941440,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "user clicks on friends profile",
+            "match": {
+              "location": "Searchfriendstepdef.user_clicks_on_friends_profile()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3178432000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "user sends him message \"hai\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "hai",
+                  "offset": 24
+                }
+              ],
+              "location": "Searchfriendstepdef.user_sends_him_message(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Facebook message",
+    "description": "",
+    "id": "facebook-message",
+    "keyword": "Feature",
+    "uri": "message.feature"
+  }
+]
