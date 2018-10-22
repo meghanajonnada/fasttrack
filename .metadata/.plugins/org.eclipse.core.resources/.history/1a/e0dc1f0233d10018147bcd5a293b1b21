@@ -1,0 +1,70 @@
+package com.mulesoft.qs.fasttrack.stepdefinitions;
+
+import static org.testng.Assert.assertEquals;
+
+import org.apache.log4j.Logger;
+
+import com.mulesoft.qs.fasttrack.pom.HomePageObjects;
+import com.mulesoft.qs.fasttrack.pom.ScheduleDemoPageObject;
+import com.mulesoft.qs.fasttrack.utilities.FrameworkUtility;
+
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class ScheduleDemoStepDefinition extends FrameworkUtility {
+	
+	
+	static final Logger logger = Logger.getLogger(ScheduleDemoStepDefinition.class);
+
+	ScheduleDemoPageObject scheduleDemoPageObject=new ScheduleDemoPageObject(driver);
+
+	@Then("SADPage:User is on Schedule a demo Home page")
+	public void User_is_on_Schedule_a_demo_Home_page ()
+	{
+		scheduleDemoPageObject=new ScheduleDemoPageObject(driver);
+		assertEquals(scheduleDemoPageObject.isDisplayedlblTabScheduleaDemo(), true);
+		assertEquals(scheduleDemoPageObject.isDisplayedlblTabAuditLog(), true);
+		assertEquals(scheduleDemoPageObject.isDisplayedlblTabHistory(), true);	
+		forXseconds(5);
+
+	}
+	
+	@When("SADPage:User selects a catalog \"(.*)\"")
+	public void User_selects_a_catalog(String value)
+	{
+		scheduleDemoPageObject.SelectaCatalogFromDropdown(value);		
+	}
+	
+	@When("SADPage:User selects a Customer \"(.*)\"")
+	public void User_selects_a_customer(String value)
+	{
+		scheduleDemoPageObject.SelectaCustomerFromDropdown(value);
+	}
+	
+	@When("SADPage:User selects a Customer Vertical \"(.*)\"")
+	public void User_selects_a_customer_vertical(String value)
+	{
+		scheduleDemoPageObject.SelectaCustomerVerticalFromDropdown(value);
+	}
+	
+	
+	@When("SADPage:User enters a Customer person name \"(.*)\"")
+	public void User_enters_a_customerName(String value)
+	{
+		scheduleDemoPageObject.enterTexttxtboxcustomerContactPerson(value);
+	}
+	
+	@When("SADPage:User enters a Customer person Email \"(.*)\"")
+	public void User_enters_a_customer_email(String value)
+	{
+		scheduleDemoPageObject.enterTexttxtboxcustomerEmail(value);	
+	}
+	
+	@When("SADPage:User selects a Customer Vertical \"(.*)\"")
+	public void User_enters_a_customer_vertical(String value)
+	{
+		scheduleDemoPageObject.enterTexttxtboxCustomerVertical(value);	
+	}
+}
+	
+

@@ -1,0 +1,51 @@
+package com.mulesoft.qs.fasttrack.testrunner;
+
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
+
+import com.mulesoft.qs.fasttrack.cucumberhooks.CucumberHooks;
+
+import cucumber.api.CucumberOptions;
+
+import cucumber.api.testng.AbstractTestNGCucumberTests;
+
+@CucumberOptions(
+		strict = true,
+		monochrome = true, 
+		features = "src/test/resources/BVTFeatures/Feature 01_verify login and logout for all users.feature",
+		glue = {"com.mulesoft.qs.fasttrack.cucumberhooks","com.mulesoft.qs.fasttrack.stepdefinitions"},
+		plugin = { "html:target/Report" ,"json:target/cucumber-report/cucumber.json"}
+
+		)
+public class RunnerClass extends AbstractTestNGCucumberTests
+{
+	
+	static final Logger logger = Logger.getLogger(CucumberHooks.class);
+	
+	@BeforeSuite	
+	static void initializeLogs1()
+		{
+		 PropertyConfigurator.configure("log4j.properties");
+	
+		}	
+		
+	@AfterSuite
+	static void sendAreport()
+	{
+		/*
+		ClueCumberMvn.clueCumberReporting();
+		HTMLcompressor.generateHTMLReportFile("report");
+		ZipConverter.generateZipFolder();
+		SendanEmail.SendMailWithAttachment("", "", "", "");*/
+	}	
+	
+	
+	static void initializeLogs ()
+		{
+		 PropertyConfigurator.configure("log4j.properties");
+	
+		}	
+}
+

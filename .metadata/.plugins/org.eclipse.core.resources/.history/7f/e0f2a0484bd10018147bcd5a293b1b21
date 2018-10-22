@@ -1,0 +1,69 @@
+package com.mulesoft.qs.fasttrack.stepdefinitions;
+
+import static org.testng.Assert.assertEquals;
+
+import org.apache.log4j.Logger;
+
+import com.mulesoft.qs.fasttrack.pom.OperationalSavingsPageObject;
+import com.mulesoft.qs.fasttrack.pom.QuicksilverInvestmentPageObject;
+import com.mulesoft.qs.fasttrack.utilities.FrameworkUtility;
+
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class QuickSilverInvestmentPageStepdefinition  extends FrameworkUtility{
+	
+	static final Logger logger = Logger.getLogger(QuickSilverInvestmentPageStepdefinition.class);
+
+	QuicksilverInvestmentPageObject quicksilverInvestmentPageObject=new QuicksilverInvestmentPageObject(driver);
+
+	@Then("QuicksilverInvestmentPage:verify whether it contains Service Provider / Telco and Enterprise tabs")
+	public void verify_whether_it_contains_two_tabs ()
+	{
+		quicksilverInvestmentPageObject=new QuicksilverInvestmentPageObject(driver);
+		assertEquals(quicksilverInvestmentPageObject.isDisplayedlblTextQuicksilverInvestment(),true);
+		assertEquals(quicksilverInvestmentPageObject.isDisplayedlblTextServiceProviderTelco(),true);
+	}
+	
+	
+	
+	@Then("QuicksilverInvestmentPage:verify whether page contains Number of Nodes, Infrastructure cost, Human Resource Cost, Professional services and KnowYourSavings button")
+public void verify_whether_page_contains_Number_of_Nodes_etc() {
+		quicksilverInvestmentPageObject=new QuicksilverInvestmentPageObject(driver);
+		assertEquals(quicksilverInvestmentPageObject.isDisplayedlblTextInfrastructurecost(),true);
+		assertEquals(quicksilverInvestmentPageObject.isDisplayedlblTextNumberofNodes(),true);
+		assertEquals(quicksilverInvestmentPageObject.isDisplayedlblText(),true);
+		assertEquals(quicksilverInvestmentPageObject.isDisplayedlblTextHumanResourceCost(),true);
+		assertEquals(quicksilverInvestmentPageObject.isDisplayedbtnKnowYourSaving(),true);
+}
+	@When("QuicksilverInvestmentPage:user enters values into \"(.*)\"")
+	public void enter_values_into_noofnodes(String value1){
+		quicksilverInvestmentPageObject.enterTexttextFieldNumberofNodes(value1);
+	}
+		@When("QuicksilverInvestmentPage:user enters values into \"(.*)\"")
+				public void enter_values_into_infracost(String value2) {
+		quicksilverInvestmentPageObject.enterTexttextFieldInfrastructurecost(value2);
+				}
+				@When("QuicksilverInvestmentPage:user enters values into \"(.*)\"")
+						public void enter_values_into_(String value1) {
+}
+		quicksilverInvestmentPageObject.enterTexttextFieldHumanResourceCost(value3);}
+						@When("QuicksilverInvestmentPage:user enters values into \"(.*)\")
+								public void enter_values_into_all_text_fileds(String value1) {
+		quicksilverInvestmentPageObject.enterTexttextFieldprofessionalServices(value4);
+		}
+	@When("QuicksilverInvestmentPage:user clicks on KnowYourSavings button")
+	public void user_clicks_on_knowyoursavings_button()
+	{
+		quicksilverInvestmentPageObject.clickbtnKnowYourSavings();
+	}
+	
+@Then("QuicksilverInvestmentPage:CurrentSpent, PostQuicksilver, btnKnowYourSavings values must be calculated and displayed")
+public void roi_calculations_must_be_displayed()
+{
+quicksilverInvestmentPageObject.gettextCurrentSpent();
+
+quicksilverInvestmentPageObject.gettextPostQuicksilver();
+quicksilverInvestmentPageObject.gettextKnowYourSavings();
+}
+}

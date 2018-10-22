@@ -1,0 +1,27 @@
+Feature: Feature 06_verify whether all items are displayed in QuicksilverInvestment
+
+Scenario Outline:Login into application and verify whether all items are displayed in QuicksilverInvestment
+
+Given Open the Browser 
+Given user is on FastTrack Login Page
+When Title of Login Page is FastTrack
+Then User Enters Credentials based on Usertype "<usertype>"
+Then user clicks on Login Button
+Given HomePage:User is on FastTrack Home page
+Then HomePage:User clicks on Quicksilver Investment in Business calculator
+Then QuicksilverInvestmentPage:verify whether it contains Service Provider / Telco and Enterprise tabs
+Then QuicksilverInvestmentPage:verify whether page contains Number of Nodes, Infrastructure cost, Human Resource Cost, Professional services and KnowYourSavings button 
+When QuicksilverInvestmentPage:user enters value into numberofnodes "<NumberofNodes>"   
+When QuicksilverInvestmentPage:user enters values into infracost "<Infrastructurecost>"
+When QuicksilverInvestmentPage:user enters value into humanres "<HumanResourceCost>"
+When QuicksilverInvestmentPage:user enters values into professionalser "<Professionalservices>"
+When QuicksilverInvestmentPage:user clicks on KnowYourSavings button
+Then QuicksilverInvestmentPage:CurrentSpent, PostQuicksilver, btnKnowYourSavings values must be calculated and displayed
+Then Close the browser
+Examples:
+    | usertype 	    |NumberofNodes|Infrastructurecost|HumanResourceCost|Professionalservices|
+	| PartnerAdmin  |10           |20                |20               |40                  |
+	| PartnerUser	|20           |5                 |6                |9                   |
+	|FastTrackAdmin	|9            |8000              |3                |500                 |
+	|FastTrackUser	|33           |750               |400              |18                  |
+    

@@ -1,0 +1,198 @@
+package com.mulesoft.qs.fasttrack.stepdefinitions;
+
+import static org.testng.Assert.assertEquals;
+
+import java.io.IOException;
+
+import org.apache.log4j.Logger;
+import org.openqa.selenium.WebDriver;
+
+import com.mulesoft.qs.fasttrack.pom.DocumentsPageObject;
+import com.mulesoft.qs.fasttrack.pom.HomePageObjects;
+import com.mulesoft.qs.fasttrack.pom.KnowledgeBasePageObject;
+import com.mulesoft.qs.fasttrack.pom.OperationalSavingsPageObject;
+import com.mulesoft.qs.fasttrack.pom.QuicksilverInvestmentPageObject;
+import com.mulesoft.qs.fasttrack.pom.ScheduleDemoPageObject;
+import com.mulesoft.qs.fasttrack.pom.TimeWarpPageObject;
+import com.mulesoft.qs.fasttrack.utilities.FrameworkUtility;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class HomePageStepDefinitions extends FrameworkUtility {
+	
+	
+	static final Logger logger = Logger.getLogger(HomePageStepDefinitions.class);
+
+	HomePageObjects homePageObjects=new HomePageObjects(driver);
+
+	@Then("HomePage:User is on FastTrack Home page")
+	public void user_is_on_already_QS_Home_page ()
+	{
+		homePageObjects=new HomePageObjects(driver);
+		assertEquals(homePageObjects.isDisplayedlblHome(),true);
+		assertEquals(homePageObjects.isDisplayedlblBusinessCalculators(),true);
+		assertEquals(homePageObjects.isDisplayedlblCollateral(),true);
+		assertEquals(homePageObjects.isDisplayedlblDemoConnect(),true);
+		assertEquals(homePageObjects.isDisplayedlblPartnerCentral(),true);
+	}
+	
+	@Then("HomePage:verify all dashboard items are displayed for DemoConnect")
+	public void verifyalldashboarditemsaredisplayedforDemoConnect ()
+	{
+		assertEquals(homePageObjects.isDisplayedlblScheduleaDemo(),true);
+		assertEquals(homePageObjects.isDisplayedlblSandbox(),true);
+		assertEquals(homePageObjects.isDisplayedlblProofofConcept(),true);
+	}
+	
+	@Then("HomePage:verify all dashboard items are displayed for Collateral")
+	public void verifyalldashboarditemsaredisplayedforcollateral ()
+	{
+		assertEquals(homePageObjects.isDisplayedlblDocuments(),true);
+		assertEquals(homePageObjects.isDisplayedlblKnowledgeBase(),true);
+		assertEquals(homePageObjects.isDisplayedlblVideos(),true);
+	}
+	
+	@Then("HomePage:verify all dashboard items are displayed for Business Calculator")
+	public void verifyalldashboarditemsaredisplayedforBusinessCalculator ()
+	{
+		assertEquals(homePageObjects.isDisplayedlblTimeWarp(),true);
+		assertEquals(homePageObjects.isDisplayedlblQuicksilverInvestment(),true);
+		assertEquals(homePageObjects.isDisplayedlblOperationalSavings(),true);
+	}
+	
+	@When("HomePage:User clicks on schedule a demo in democonnect")
+	public void User_clicks_on_Intent_Designer_Mega_menu_Item ()
+	{
+		homePageObjects.clicklblScheduleaDemo();
+	}
+	
+	@When("HomePage:User clicks on Quicksilver Investment in Business calculator")
+	public void User_clicks_on_Template_Management_Mega_menu_Item ()
+	{
+		homePageObjects.clicklblQuicksilverInvestment();
+	}
+	
+	@When("HomePage:User clicks on Documents in Collateral")
+	public void User_clicks_on_documents()
+	{
+		homePageObjects.clicklblDocuments();
+	}
+	
+	@When("HomePage:User clicks on Knowledge Base in Collateral")
+	public void User_clicks_on_Knowledge_Base()
+	{
+		homePageObjects.clicklblKnowledgeBase();
+	}
+	
+	@When("HomePage:User clicks on Videos in Collateral")
+	public void User_clicks_on_Videos()
+	{
+		homePageObjects.clicklblVideos();
+	}
+	
+	@When("HomePage:User clicks on operational savings in Business calculator")
+	public void User_clicks_on_operational_savings()
+	{
+		homePageObjects.clicklblOperationalSavings();
+	}
+	
+	@When("HomePage:User clicks on Time Warp in Business calculator")
+	public void User_clicks_on_Time_warp()
+	{
+		homePageObjects.clicklblTimeWarp();
+	}
+	
+	@When("HomePage:check whether access to each module is according with FT admin portal for \"(.*)\"$")
+	public void check_whether_schedule_a_demo(String usertype) throws IOException
+	{
+		String array[]= {"Schedule a Demo","Quicksilver Investment",
+				"Operational Savings","Time Warp","Documents","Knowledge Base","Videos"};
+		
+		//Sandbox,"Proof of Concept"
+		
+		forXseconds(3);
+		
+		for (int i = 0; i < array.length; i++)
+		{
+			System.out.println(array[i]);
+			System.out.println(homePageObjects.isEnabledSubModule(array[i])+"    "+	homePageObjects.getStatusofUser(usertype, array[i]));
+			assertEquals(homePageObjects.isEnabledSubModule(array[i]),
+					homePageObjects.getStatusofUser(usertype, array[i]));
+		}
+		
+	}
+	
+	@When("HomePage:verify clicking on each feature navigates to respective page")
+	public void verify_clicking_on_each_feature_navigates_to_respective_page() throws IOException
+	{
+		String array[]= {"Schedule a Demo","Quicksilver Investment",
+				"Operational Savings","Time Warp","Documents","Knowledge Base","Videos"};
+		
+		//Sandbox,"Proof of Concept"
+		
+		for (int i = 0; i < array.length; i++)
+		{
+			if(homePageObjects.isEnabledSubModule(array[i])==true)
+			{
+				homePageObjects.clickonEnabledSubModule(array[i]);
+			if(array[i].equals("Schedule a Demo"))
+			{
+				ScheduleDemoPageObject a=new ScheduleDemoPageObject(driver);
+				assertEquals(a.isDisplayedlblTabAuditLog(),true);
+				assertEquals(a.isDisplayedlblTabAuditLog(),true);
+				assertEquals(a.isDisplayedlblTabAuditLog(),true);
+			}
+			else if(array[i].equals("Quicksilver Investment"))
+			{
+				QuicksilverInvestmentPageObject a=new QuicksilverInvestmentPageObject(driver);
+				assertEquals(a.isDisplayedlblTextQuicksilverInvestment(),true);
+			}
+			
+			else if(array[i].equals("Operational Savings"))
+			{
+				OperationalSavingsPageObject a=new OperationalSavingsPageObject(driver);
+				assertEquals(a.isDisplayedlblTextOperationalSavings(),true);
+			}
+			
+			else if(array[i].equals("Documents"))
+			{
+				DocumentsPageObject a=new DocumentsPageObject(driver);
+				assertEquals(a.isDisplayedlblTextHeaderCategories(),true);
+				assertEquals(a.isDisplayedlblTextDocument(),true);
+			}
+			
+			else if(array[i].equals("Time Warp"))
+			{/*
+				TimeWarpPageObject a=new TimeWarpPageObject(driver);
+				assertEquals(a.isDisplayedbtnHome(),true);
+			*/}
+			else if(array[i].equals("Knowledge Base"))
+			{
+				KnowledgeBasePageObject a=new KnowledgeBasePageObject(driver);
+				assertEquals(a.isDisplayedlblTextKnowledgeBase(),true);
+				assertEquals(a.isDisplayedlblTextHeaderCategories(),true);
+
+			}
+			
+			homePageObjects.clickbtnHome();
+			}
+		}
+		
+	}
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+}

@@ -1,0 +1,20 @@
+Feature: Feature 06_verify whether all items are displayed in QuicksilverInvestment
+
+Scenario Outline:Login into application and verify whether all items are displayed in QuicksilverInvestment
+
+Given Open the Browser 
+Given user is on FastTrack Login Page
+When Title of Login Page is FastTrack
+Then User Enters Credentials based on Usertype "<usertype>"
+Then user clicks on Login Button
+Given HomePage:User is on FastTrack Home page
+Then QuicksilverInvestmentPage:User clicks on QuicksilverInvestmentPage
+Then QuicksilverInvestmentPage:verify whether it contains 
+Then Close the browser
+
+Examples:
+    | usertype 	    |
+	| PartnerAdmin  | 
+	| PartnerUser	|
+	|FastTrackAdmin	|
+	|FastTrackUser	|

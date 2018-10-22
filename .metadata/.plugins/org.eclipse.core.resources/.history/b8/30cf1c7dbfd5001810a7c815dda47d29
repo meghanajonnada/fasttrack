@@ -1,0 +1,23 @@
+Feature: Feature 07_verify calculation of ROI
+
+Scenario Outline:Login into application and verify ROI calculation
+
+Given Open the Browser 
+Given user is on FastTrack Login Page
+When Title of Login Page is FastTrack
+Then User Enters Credentials based on Usertype "<usertype>"
+Then user clicks on Login Button
+Given HomePage:User is on FastTrack Home page
+Then HomePage:User clicks on Quicksilver Investment in Business calculator
+Then 
+
+
+
+
+
+Examples:
+    | usertype 	    |
+	| PartnerAdmin  | 
+	| PartnerUser	|
+	|FastTrackAdmin	|
+	|FastTrackUser	|

@@ -1,0 +1,53 @@
+package com.mulesoft.qs.fasttrack.stepdefinitions;
+
+import static org.testng.Assert.assertEquals;
+
+import org.apache.log4j.Logger;
+
+import com.mulesoft.qs.fasttrack.pom.OperationalSavingsPageObject;
+import com.mulesoft.qs.fasttrack.pom.QuicksilverInvestmentPageObject;
+import com.mulesoft.qs.fasttrack.utilities.FrameworkUtility;
+
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class QuickSilverInvestmentPageStepdefinition  extends FrameworkUtility{
+	
+	static final Logger logger = Logger.getLogger(QuickSilverInvestmentPageStepdefinition.class);
+
+	QuicksilverInvestmentPageObject quicksilverInvestmentPageObject=new QuicksilverInvestmentPageObject(driver);
+
+	@Then("QuicksilverInvestmentPage:verify whether it contains Service Provider / Telco and Enterprise tabs")
+	public void verify_whether_it_contains_two_tabs ()
+	{
+		quicksilverInvestmentPageObject=new QuicksilverInvestmentPageObject(driver);
+		assertEquals(quicksilverInvestmentPageObject.isDisplayedlblTextQuicksilverInvestment(),true);
+		assertEquals(quicksilverInvestmentPageObject.isDisplayedlblTextServiceProviderTelco(),true);
+	}
+	
+	
+	
+	@Then("QuicksilverInvestmentPage:verify whether page contains Number of Nodes, Infrastructure cost, Human Resource Cost, Professional services and KnowYourSavings button")
+public void verify_whether_page_contains_Number_of_Nodes_etc() {
+		quicksilverInvestmentPageObject=new QuicksilverInvestmentPageObject(driver);
+		assertEquals(quicksilverInvestmentPageObject.isDisplayedlblTextInfrastructurecost(),true);
+		assertEquals(quicksilverInvestmentPageObject.isDisplayedlblTextNumberofNodes(),true);
+		assertEquals(quicksilverInvestmentPageObject.isDisplayedlblTextEnterprise(),true);
+		assertEquals(quicksilverInvestmentPageObject.isDisplayedlblTextHumanResourceCost(),true);
+		assertEquals(quicksilverInvestmentPageObject.isDisplayedbtnKnowYourSaving(),true);
+}
+	@When("QuicksilverInvestmentPage:user enters values into (\\d+) and (\\d+) and (\\d+) and (\\d+)")
+	public void enter_values_into_all_text_fileds(String value1,String value2,String value3,String value4){
+		quicksilverInvestmentPageObject.enterTexttextFieldNumberofNodes(value1);
+		quicksilverInvestmentPageObject.enterTexttextFieldInfrastructurecost(value2);
+		quicksilverInvestmentPageObject.enterTexttextFieldHumanResourceCost(value3);
+		quicksilverInvestmentPageObject.enterTexttextFieldprofessionalServices(value4);
+		}
+	@When("QuicksilverInvestmentPage:user clicks on KnowYourSavings button")
+	public void user_clicks_on_knowyoursavings_button()
+	{
+		quicksilverInvestmentPageObject.clickbtnKnowYourSavings();
+	}
+	
+
+}

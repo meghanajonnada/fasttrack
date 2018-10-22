@@ -1,0 +1,236 @@
+package com.mulesoft.qs.fasttrack.pom;
+
+import org.openqa.selenium.WebDriver;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+import com.mulesoft.qs.fasttrack.utilities.FrameworkUtility;
+
+public class QuicksilverInvestmentPageObject extends BasePage{
+
+	public QuicksilverInvestmentPageObject(WebDriver driver) {
+		super(driver);
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	@FindBy(xpath="//li[text()='Quicksilver Investment']")
+	private WebElement lblTextQuicksilverInvestment;
+	
+	@FindBy(xpath="//a[text()='Service Provider / Telco']")
+	private WebElement lblTextServiceProviderTelco;
+	
+	@FindBy(xpath="//a[text()='Enterprise']")
+	private WebElement lblTextEnterprise;
+	
+	
+	
+	@FindBy(id="noOfNodes")
+	private WebElement textFieldNumberofNodes;
+	
+	@FindBy(id="infroCost")
+	private WebElement textFieldInfrastructurecost;
+	
+	@FindBy(id="hrc")
+	private WebElement textFieldHumanResourceCost;
+	
+	@FindBy(id="professionalServices")
+	private WebElement textFieldprofessionalServices;
+	
+	@FindBy(xpath="//button[text()='Know Your Savings']")
+	private WebElement btnKnowYourSavings;
+	
+
+@FindBy(xpath="//label[text()='Number of Nodes']")
+private WebElement lblTextNumberofNodes;
+	
+@FindBy(xpath="//label[text()='Infrastructure cost']")
+private WebElement lblTextInfrastructurecost;
+
+@FindBy(xpath="//label[text()='Professional Services']")
+private WebElement lblTextProfessionalServices;
+
+@FindBy(xpath="//label[text()='Human Resource Cost']")
+private WebElement lblTextHumanResourceCost;
+
+@FindBy(xpath="//div[text()='Current Spend']/following-sibling::div")
+private WebElement CurrentSpent;
+
+@FindBy(xpath="//div[text()='Post-Quicksilver']/following-sibling::div")
+private WebElement PostQuicksilver;
+
+
+@FindBy(xpath="//div[text()='Your Savings']/following-sibling::div")
+private WebElement YourSavings;
+
+
+	
+	
+	public boolean isDisplayedbtnKnowYourSaving()
+	{
+		return isDisplayed(btnKnowYourSavings);
+	}
+	
+	public void enterTexttextFieldNumberofNodes(String value)
+	{
+		enterText(textFieldNumberofNodes, value);
+	}
+	
+	public void enterTexttextFieldInfrastructurecost(String value)
+	{
+		enterText(textFieldInfrastructurecost, value);
+	}
+	
+	public void enterTexttextFieldprofessionalServices(String value)
+	{
+		enterText(textFieldprofessionalServices, value);
+	}
+	
+	public void enterTexttextFieldHumanResourceCost(String value)
+	{
+		enterText(textFieldHumanResourceCost, value);
+	}
+	
+	public void clickbtnKnowYourSavings()
+	{
+		clickElement(btnKnowYourSavings);
+	}
+	public  boolean isDisplayedlblTextQuicksilverInvestment()
+	{
+		return isDisplayed(lblTextQuicksilverInvestment);
+	}
+	public boolean isDisplayedlblTextServiceProviderTelco()
+	{
+		return isDisplayed(lblTextServiceProviderTelco);
+	}
+	public boolean isDisplayedlblTextHumanResourceCost()
+	{
+		return isDisplayed(lblTextHumanResourceCost);
+	}
+	public boolean isDisplayedlblTextprofessionlservies()
+	{
+		return isDisplayed(lblTextProfessionalServices);
+	}
+
+/*public String valueofnoofnodes()
+{
+	return gettext(textFieldNumberofNodes);
+}
+public String valueofHumanResourceCost()
+{
+	return gettext(textFieldHumanResourceCost);
+}
+public String valueofInfrastructurecost()
+{
+	return gettext(textFieldInfrastructurecost);
+}
+public String valueofProfessionalServices()
+{
+	return gettext(textFieldprofessionalServices);
+}*/
+public String a()
+	{
+	return getAttributeValue(textFieldNumberofNodes);
+	}
+	
+	 public String  b()
+	 {
+	 return getAttributeValue(textFieldHumanResourceCost);
+	 }
+	 
+	 public String  c()
+	{
+		 return getAttributeValue(textFieldInfrastructurecost);
+		 }
+	 public String  d()
+	{
+		 return getAttributeValue(textFieldprofessionalServices);
+	}
+	 public int nodes()
+	 {
+		 return Integer.parseInt(a());
+		 }
+	
+public int infrastructure()
+{
+return Integer.parseInt(c());
+}
+
+public int humanres()
+{
+ return Integer.parseInt(b());
+ }
+ public int professional()
+{ 
+	 return Integer.parseInt(d());
+	 }
+public void printvalues()
+{
+	System.out.println(nodes());
+	System.out.println(infrastructure());
+	System.out.println(humanres());
+	System.out.println(professional());
+}
+public String calculatedsavings()
+{
+	
+	int cs=(nodes()*1000)+humanres()+infrastructure()+professional();
+	float afterquick=(int) ((nodes()*1000)+(Math.round(0.6*humanres())));
+	//System.out.println((Math.round(0.6*humanres())));
+	//System.out.println(afterquick);
+	int afterquicksilver=Math.round(afterquick);
+	System.out.println(afterquicksilver);
+	int acalsavings=cs-afterquicksilver;
+	int calsaving=Math.round(acalsavings);
+	String dollarscalsavings="$"+calsaving;
+	return dollarscalsavings;
+	
+}
+	
+	
+	public boolean isDisplayedlblTextEnterprise()
+	{
+		return isDisplayed(lblTextEnterprise);
+	}
+	public boolean isDisplayedlblTextNumberofNodes()
+	{
+		return isDisplayed(lblTextNumberofNodes);
+	}
+	
+	public boolean isDisplayedlblTextInfrastructurecost()
+	{
+		return isDisplayed(lblTextInfrastructurecost);
+	}
+
+	public String gettextCurrentSpent()
+	{
+		return gettext(CurrentSpent);
+	}
+	public String gettextPostQuicksilver()
+	{
+		return gettext(PostQuicksilver);
+	}
+	
+	public String gettextKnowYourSavings()
+	{
+		return gettext(YourSavings);
+	}
+
+	public void print()
+	{
+		System.out.println("current spent:"+gettextCurrentSpent());
+		System.out.println("PostQuicksilver:"+gettextPostQuicksilver());
+		System.out.println("Savings:"+gettextKnowYourSavings());
+		
+	}
+	
+	public String actualsavings()
+	{
+		return gettextKnowYourSavings();
+	}
+	
+	
+}
+
+

@@ -1,0 +1,18 @@
+package com.mulesoft.qs.fasttrack.stepdefinitions;
+
+import org.apache.log4j.Logger;
+
+import com.mulesoft.qs.fasttrack.pom.OperationalSavingsPageObject;
+import com.mulesoft.qs.fasttrack.pom.QuicksilverInvestmentPageObject;
+import com.mulesoft.qs.fasttrack.utilities.FrameworkUtility;
+
+public class QuickSilverInvestmentPageStepdefinition  extends FrameworkUtility{
+	
+	static final Logger logger = Logger.getLogger(QuickSilverInvestmentPageStepdefinition.class);
+
+	QuicksilverInvestmentPageObject quicksilverInvestmentPageObject=new QuicksilverInvestmentPageObject(driver);
+
+
+
+
+}
